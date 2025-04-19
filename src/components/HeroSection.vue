@@ -20,8 +20,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-end;
+  text-align: right;
   padding: 0 20px;
   margin: 0;
   background-attachment: fixed;
@@ -30,7 +30,7 @@
 
 
 #hero h1 {
-  font-size: 60px;
+  font-size: 58px;
   font-weight: 700;
   color: black;
   z-index: 2;
@@ -58,20 +58,24 @@
 }
 
 .hero-buttons button {
-  background: #f1c40f;
-  border: none;
-  padding: 12px 20px;
-  font-size: 18px;
+  background: transparent;
+  border: 2px solid black;
   color: black;
+  padding: 10px 18px;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  margin: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: none;
 }
 
 .hero-buttons button:hover {
-  background: #ffdd57;
-  transform: scale(1.05);
+  background: #f1c40f;
+  color: black;
+  /*border: 2px solid white;*/
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 </style>
