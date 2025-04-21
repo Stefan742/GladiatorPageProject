@@ -9,18 +9,22 @@
     <nav>
       <ul>
         <li><router-link to="/">About Us</router-link></li>
-        <li><a href="treninzi.html">Training</a></li>
+        <li><router-link to="/training">Training</router-link></li>
         <li><a href="#news">News & Events</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     </div>
-    <div class="nav-right">
-    <div class="nav-buttons">
-      <button>JOIN US</button>
-      <button>CONTACT US</button>
-    </div>
-    </div>
+<!--    *************************************************************************************************-->
+<!--    GI ISKOMENTIRAV KOPCINJAVA OTI NEKAKO MI NEMAA LOGIKA DA STOJAT TAMU AMA AKO MISLIS DEKA TREBA DA STOJAT ODKOMENTIRAJ GI-->
+<!--    ******************************************************************************************************-->
+
+<!--    <div class="nav-right">-->
+<!--    <div class="nav-buttons">-->
+<!--      <button>JOIN US</button>-->
+<!--      <button>CONTACT US</button>-->
+<!--    </div>-->
+<!--    </div>-->
   </div>
 </template>
 

@@ -5,7 +5,8 @@
       Monday: 6:00 PM – 7:00 PM ...<br />
       Saturday: 9:00 AM – 10:00 AM
     </p>
-    <button><a href="treninzi.html">View Details</a></button>
+    <button><router-link to="/training">Training</router-link>
+    </button>
   </div>
 </template>
 
