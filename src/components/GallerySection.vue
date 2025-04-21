@@ -8,7 +8,9 @@
     </div>
     <div class="view-more-container">
       <div class="gradient-overlay"></div>
-      <button class="view-more-btn"><a href="gallery.html">View More</a></button>
+      <router-link to="/gallery">
+        <button class="view-more-btn">View More</button>
+      </router-link>
     </div>
   </div>
 </template>

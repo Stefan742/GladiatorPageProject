@@ -8,7 +8,7 @@
     <div class="nav-center">
     <nav>
       <ul>
-        <li><a href="#home">About Us</a></li>
+        <li><router-link to="/">About Us</router-link></li>
         <li><a href="treninzi.html">Training</a></li>
         <li><a href="#news">News & Events</a></li>
         <li><a href="#contact">Contact</a></li>
