@@ -1,8 +1,8 @@
 <template>
   <LoadingScreen v-if="isLoading" />
   <div v-else>
-      <Navbar/>
-    <h1 style="text-align: center; margin-top: 90px">OUR GALLERY</h1>
+    <Navbar/>
+    <Carousel/>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import { ref, onMounted } from 'vue';
 
 import Navbar from '../components/Navbar.vue';
 import LoadingScreen from '../components/LoadingScreen.vue';
-
+import Carousel from "@/components/Carousel.vue";
 
 const isLoading = ref(true);
 
