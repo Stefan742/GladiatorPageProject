@@ -24,7 +24,7 @@ import { ref, onMounted } from 'vue';
 
 import Navbar from '../components/Navbar.vue';
 import LoadingScreen from '../components/LoadingScreen.vue';
-import TrainingCard from './TrainingCard.vue';
+import TrainingCard from '../components/TrainingCard.vue';
 
 const isLoading = ref(true);
 

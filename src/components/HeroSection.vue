@@ -6,11 +6,18 @@
     </h3>
     <div class="hero-buttons">
       <button>APPLY NOW</button>
-      <button>LEARN MORE</button>
+      <button @click="scrollToAbout">LEARN MORE</button>
     </div>
   </div>
 </template>
-
+<script setup>
+const scrollToAbout = () => {
+  const section = document.getElementById('us');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+</script>
 <style scoped>
 #hero {
   background: url("../../public/assets/hero.png") no-repeat center center;

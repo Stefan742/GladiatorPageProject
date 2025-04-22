@@ -75,6 +75,7 @@ onMounted(() => {
 .view-more-container {
   position: relative;
   margin-top: 40px;
+  padding-bottom: 20px;
 }
 
 .gradient-overlay {

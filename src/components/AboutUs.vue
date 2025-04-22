@@ -1,5 +1,5 @@
 <template>
-  <div id="us">
+  <section id="us">
     <img src="../../public/assets/us.jpg" height="400" width="400" class="fade-in-left"/>
     <div id="side">
       <h1>DISCOVER OUR JOURNEY</h1>
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

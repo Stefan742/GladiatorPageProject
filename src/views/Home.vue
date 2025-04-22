@@ -6,6 +6,7 @@
     <AboutUs />
     <TrainingSchedule />
     <GallerySection />
+    <Footer/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import AboutUs from "@/components/AboutUs.vue";
 import TrainingSchedule from '@/components/TrainingSchedule.vue';
 import GallerySection from '@/components/GallerySection.vue';
 import LoadingScreen from '@/components/LoadingScreen.vue';
+import Footer from "@/components/Footer.vue";
 
 const isLoading = ref(true);
 
@@ -26,6 +28,7 @@ onMounted(() => {
     isLoading.value = false;
   }, 2000);
 });
+
 </script>
 
 <style>

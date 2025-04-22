@@ -11,7 +11,7 @@
         <li><router-link to="/">About Us</router-link></li>
         <li><router-link to="/training">Training</router-link></li>
         <li><a href="#news">News & Events</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><router-link to="/contact">Contact</router-link></li>
       </ul>
     </nav>
     </div>
