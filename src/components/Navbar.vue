@@ -1,32 +1,38 @@
 <template>
   <div id="navbar">
     <div class="nav-left">
-    <a href="https://www.facebook.com/Gladiatorteamm">
-      <img src="../../public/assets/logo.png" alt="Logo" />
-    </a>
+      <a href="https://www.facebook.com/Gladiatorteamm">
+        <img src="../../public/assets/logo.png" alt="Logo" />
+      </a>
     </div>
-    <div class="nav-center">
-    <nav>
-      <ul>
-        <li><router-link to="/">About Us</router-link></li>
-        <li><router-link to="/training">Training</router-link></li>
-        <li><a href="#news">News & Events</a></li>
-        <li><router-link to="/contact">Contact</router-link></li>
-      </ul>
-    </nav>
-    </div>
-<!--    *************************************************************************************************-->
-<!--    GI ISKOMENTIRAV KOPCINJAVA OTI NEKAKO MI NEMAA LOGIKA DA STOJAT TAMU AMA AKO MISLIS DEKA TREBA DA STOJAT ODKOMENTIRAJ GI-->
-<!--    ******************************************************************************************************-->
 
-<!--    <div class="nav-right">-->
-<!--    <div class="nav-buttons">-->
-<!--      <button>JOIN US</button>-->
-<!--      <button>CONTACT US</button>-->
-<!--    </div>-->
-<!--    </div>-->
+    <div class="burger" @click="toggleMenu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="nav-center" :class="{ open: isMenuOpen }">
+      <nav>
+        <ul>
+          <li><router-link to="/">About Us</router-link></li>
+          <li><router-link to="/training">Training</router-link></li>
+          <li><a href="#news">News & Events</a></li>
+          <li><router-link to="/contact">Contact</router-link></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>
+<script setup>
+import { ref } from 'vue';
+const isMenuOpen = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+</script>
+
 
 <style scoped>
 #navbar {
@@ -94,4 +100,51 @@ nav ul li a:hover {
 .nav-buttons button:hover {
   background: #f1c40f;
   color: black;
-}</style>
+}
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .bar {
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  .nav-center {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-center.open {
+    display: flex;
+    margin-top: 15px;
+  }
+
+  .nav-center nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+</style>

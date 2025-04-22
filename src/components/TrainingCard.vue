@@ -6,7 +6,7 @@
       <transition name="slide-fade" mode="out-in">
         <div class="belt-carousel" :key="currentIndex">
           <img :src="currentBelt.image" alt="belt" class="belt-img" />
-          <p class="belt-name">ПОЈАС: {{ currentBelt.name }}</p>
+          <p class="belt-name">Beltg: {{ currentBelt.name }}</p>
           <p class="belt-time">{{ currentBelt.time }}</p>
         </div>
       </transition>
