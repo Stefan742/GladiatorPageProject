@@ -63,7 +63,7 @@ const isLoading = ref(true);
 onMounted(() => {
   setTimeout(() => {
     isLoading.value = false;
-  }, 2000);
+  }, 4000);
 });
 // FAQ Data
 const faqs = ref([
