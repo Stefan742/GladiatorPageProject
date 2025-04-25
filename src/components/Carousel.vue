@@ -51,7 +51,13 @@ const images = [
   '../../public/assets/3.jpg',
   '../../public/assets/4.jpg',
   '../../public/assets/5.jpg',
-  '../../public/assets/6.jpg'
+  '../../public/assets/6.jpg',
+  '../../public/assets/7.jpg',
+  '../../public/assets/8.jpg',
+  '../../public/assets/9.jpg',
+  '../../public/assets/10.jpg',
+  '../../public/assets/11.jpg',
+  '../../public/assets/12.jpg',
 ]
 
 const currentIndex = ref(0)
@@ -128,6 +134,7 @@ onBeforeUnmount(() => {
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 0 30px #f1c40f;
+  /*box-shadow: 0 0 30px white;*/
   text-align: center;
 }
 
@@ -244,6 +251,7 @@ onBeforeUnmount(() => {
 
 .card {
   width: 200px;
+  height: 200px;
   margin: 10px;
   overflow: hidden;
   border-radius: 8px;
@@ -276,7 +284,7 @@ onBeforeUnmount(() => {
   text-align: center;
   color: white;
   font-size: 2.5rem;
-  margin: 105px 0 25px 0;
+  margin: 80px 0 25px 0;
   font-weight: bold;
   letter-spacing: 2px;
 }

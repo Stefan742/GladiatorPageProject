@@ -1,8 +1,11 @@
 <template>
   <LoadingScreen v-if="isLoading" />
   <div v-else>
-    <Navbar/>
-    <Carousel/>
+    <div class="page-wrapper">
+      <Navbar/>
+      <Carousel/>
+    </div>
+    <Footer/>
   </div>
 </template>
 
@@ -12,6 +15,7 @@ import { ref, onMounted } from 'vue';
 import Navbar from '../components/Navbar.vue';
 import LoadingScreen from '../components/LoadingScreen.vue';
 import Carousel from "@/components/Carousel.vue";
+import Footer from "@/components/Footer.vue";
 
 const isLoading = ref(true);
 
@@ -23,5 +27,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+.page-wrapper {
+  background: linear-gradient(to right, #434343, #000000);
+  /*background: linear-gradient(to bottom, #2c3e50, #4ca1af);*/
+  min-height: 100vh;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
 </style>
