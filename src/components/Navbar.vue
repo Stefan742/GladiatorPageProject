@@ -2,7 +2,7 @@
   <div id="navbar">
     <div class="nav-left">
       <a href="https://www.facebook.com/Gladiatorteamm">
-        <img src="../../public/assets/logo.png" alt="Logo" />
+        <img src="/assets/logo.png" alt="Logo" />
       </a>
     </div>
 
@@ -50,8 +50,8 @@ const toggleMenu = () => {
   z-index: 1000;
 }
 .nav-left,
-.nav-center,
-.nav-right {
+.nav-center
+{
   display: flex;
   align-items: center;
 }

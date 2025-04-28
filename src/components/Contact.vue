@@ -1,6 +1,8 @@
 <template>
   <LoadingScreen v-if="isLoading"/>
+  <div id="container">
   <Navbar />
+  <h1>Contact us</h1>
   <div class="contact-container">
     <!-- FAQ Section -->
     <div class="side faq-section">
@@ -49,6 +51,7 @@
       </div>
     </div>
   </div>
+  </div>
   <Footer />
 </template>
 
@@ -94,8 +97,18 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
-.contact-container {
+h1{
   margin-top: 90px;
+  text-align: center;
+  color: white;
+}
+h2{
+  color: white;
+}
+#container{
+  background: linear-gradient(to right, #434343, #000000);
+}
+.contact-container {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -219,4 +232,71 @@ iframe {
   height: 100%;
   border: none;
 }
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .side, .card {
+    max-width: 90%;
+    min-width: unset;
+  }
+
+  .submitBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+    #container{
+      margin-top: -60px;
+    }
+  .submitBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  h1 {
+    padding-top: 100px;
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+  }
+
+  .location-section p {
+    font-size: 14px;
+  }
+}
+
 </style>

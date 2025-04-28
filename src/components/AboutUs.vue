@@ -111,4 +111,48 @@ onMounted(() => {
 #middle .column {
   width: 48%;
 }
+@media (max-width: 768px) {
+  #us {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  #side {
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #middle {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #middle .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #middle .column {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #side h1, #middle h1 {
+    font-size: 24px;
+  }
+
+  #side p, #middle p {
+    font-size: 16px;
+  }
+
+  img.fade-in-left {
+    width: 80%;
+    height: auto;
+  }
+}
+
 </style>
