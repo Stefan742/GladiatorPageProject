@@ -2,7 +2,7 @@
   <div id="hero">
     <video
         ref="heroVideo"
-        src="/assets/Hero.mp4"
+        src="/assets/VideoFinal.mp4"
         autoplay
         muted
         playsinline
@@ -32,6 +32,8 @@ const scrollToAbout = () => {
 </script>
 <style scoped>
 #hero {
+  /*background: url("/public/assets/hero.png") no-repeat;*/
+  /*background-size: cover;*/
   height: 100vh;
   width: 100%;
   display: flex;

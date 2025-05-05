@@ -1,5 +1,6 @@
 <template>
   <div class="page-wrapper">
+    <LoadingScreen v-if="isLoading"/>
     <navbar/>
     <h1 id="title">News & Events</h1>
       <div class="news-events-container">
@@ -16,8 +17,11 @@ import Navbar from "@/components/Navbar.vue";
 import NewsSection from "@/components/NewsSection.vue";
 import EventsSection from "@/components/EventsSection.vue";
 import Footer from "@/components/Footer.vue";
+import LoadingScreen from "@/components/LoadingScreen.vue";
+
 export default {
   components: {
+    LoadingScreen,
     Footer,
     Navbar,
     NewsSection,
@@ -25,6 +29,7 @@ export default {
   },
   data() {
     return {
+      isLoading: true,
       newsList: [
         {id: 1, title: 'New Dojo Opening', description: 'We opened a new dojo in Skopje.', date: '2025-04-10'},
         {id: 2, title: 'Championship Results', description: 'Our team won 3 medals!', date: '2025-03-22'}
@@ -36,6 +41,11 @@ export default {
         {id: 4, type: 'tournament', name: 'National Championship', date: '2025-11-12'}
       ]
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2500);
   },
   computed: {
     upcomingEvents() {
