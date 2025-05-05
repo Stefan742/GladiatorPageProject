@@ -1,12 +1,24 @@
 <template>
   <div id="hero">
+    <video
+        ref="heroVideo"
+        src="/assets/Hero.mp4"
+        autoplay
+        muted
+        playsinline
+        class="hero-video"
+    ></video>
     <h1>KARATE TEAM GLADIATOR</h1>
     <h3>
       Join Karate Team Gladiator and embark on a journey of discipline, passion, and excellence...
     </h3>
     <div class="hero-buttons">
-      <button>APPLY NOW</button>
-      <button @click="scrollToAbout">LEARN MORE</button>
+      <button>
+        <span>APPLY NOW</span>
+      </button>
+      <button @click="scrollToAbout">
+        <span>LEARN MORE</span>
+      </button>
     </div>
   </div>
 </template>
@@ -20,8 +32,6 @@ const scrollToAbout = () => {
 </script>
 <style scoped>
 #hero {
-  background: url("../../public/assets/hero.png") no-repeat center center;
-  background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -33,13 +43,23 @@ const scrollToAbout = () => {
   margin: 0;
   background-attachment: fixed;
 }
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center; /* <-- ова е трикот */
+  z-index: 0;
+}
 
 
 
 #hero h1 {
   font-size: 58px;
   font-weight: 700;
-  color: black;
+  color: #f1c40f;
   z-index: 2;
   position: relative;
   animation: fadeIn 1.5s ease-in-out;
@@ -50,7 +70,7 @@ const scrollToAbout = () => {
   font-weight: normal;
   max-width: 700px;
   margin-top: 15px;
-  color: dimgrey;
+  color: white;
   z-index: 2;
   position: relative;
 }
@@ -64,25 +84,73 @@ const scrollToAbout = () => {
   justify-content: center;
 }
 
-.hero-buttons button {
-  background: transparent;
-  border: 2px solid black;
-  color: black;
-  padding: 10px 18px;
-  font-size: 17px;
+button {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 4px;
+  width: 150px;
   text-transform: uppercase;
-  box-shadow: none;
+  cursor: pointer;
+  transform: skew(-21deg);
 }
 
-.hero-buttons button:hover {
-  background: #f1c40f;
-  color: black;
-  /*border: 2px solid white;*/
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+span {
+  display: inline-block;
+  transform: skew(21deg);
 }
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+button:hover {
+  color: #fff;
+}
+
+button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  #hero {
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  #hero h1 {
+    font-size: 36px;
+  }
+
+  #hero h3 {
+    font-size: 18px;
+    max-width: 90%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  button {
+    width: 180px;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}
+
 </style>

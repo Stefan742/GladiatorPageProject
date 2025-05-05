@@ -139,4 +139,39 @@ onMounted(() => {
 .fade-in-scale.active {
   opacity: 1;
   transform: scale(1);
-}</style>
+}
+@media (max-width: 768px) {
+  #gallery h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .gallery-item {
+    width: 100%;
+  }
+
+  .view-more-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .view-more-btn {
+    width: 80%;
+    font-size: 14px;
+  }
+}
+
+</style>
