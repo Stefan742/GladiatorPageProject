@@ -31,7 +31,7 @@ const isLoading = ref(true);
 onMounted(() => {
   setTimeout(() => {
     isLoading.value = false;
-  }, 4000);
+  }, 2500);
 });
 
 const trainingSchedule = [

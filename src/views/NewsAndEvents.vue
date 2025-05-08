@@ -1,32 +1,33 @@
 <template>
-    <div class="page-wrapper">
-      <navbar/>
-      <h1 id="title">News & Events</h1>
-        <div class="news-events-container">
-          <NewsSection :newsList="newsList"/>
-          <EventsSection :events="upcomingEvents" title="Upcoming Events"/>
-          <EventsSection :events="allEvents" title="All Events"/>
-        </div>
+  <div class="page-wrapper">
+    <LoadingScreen v-if="isLoading" />
+    <Navbar />
+    <h1 id="title">News & Events</h1>
+    <div class="news-events-container">
+      <NewsSection :newsList="newsList" />
+      <EventsSection :events="upcomingEvents" title="Upcoming Events" />
+      <EventsSection :events="allEvents" title="All Events" />
     </div>
-    <Footer/>
+    <Footer />
+  </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue'
 
-import Navbar from "@/components/Navbar.vue";
-import NewsSection from "@/components/NewsSection.vue";
-import EventsSection from "@/components/EventsSection.vue";
-import Footer from "@/components/Footer.vue";
-
+import Navbar from "@/components/Navbar.vue"
+import NewsSection from "@/components/NewsSection.vue"
+import EventsSection from "@/components/EventsSection.vue"
+import Footer from "@/components/Footer.vue"
+import LoadingScreen from "@/components/LoadingScreen.vue"
 
 // Loading screen
-const isLoading = ref(true);
+const isLoading = ref(true)
 onMounted(() => {
   setTimeout(() => {
-    isLoading.value = false;
-  }, 4000);
-});
+    isLoading.value = false
+  }, 4000)
+})
 
 // News list
 const newsList = ref([
@@ -54,37 +55,38 @@ const newsList = ref([
     src: './../public/assets/3.jpg',
     link: 'https://example.com/news3'
   }
-]);
+])
 
 // Events list
 const eventsList = ref([
-  {id: 1, name: 'Spring Training Camp', date: '2025-05-25'},
-  {id: 2, name: 'Local Tournament', date: '2025-06-05'},
-  {id: 3, name: 'Karate Seminar', date: '2025-07-10'},
-  {id: 4, name: 'National Championship', date: '2025-11-12'},
-  {id: 5, name: 'World Cup', date: '2025-06-17'},
-]);
+  { id: 1, name: 'Spring Training Camp', date: '2025-05-25' },
+  { id: 2, name: 'Local Tournament', date: '2025-06-05' },
+  { id: 3, name: 'Karate Seminar', date: '2025-07-10' },
+  { id: 4, name: 'National Championship', date: '2025-11-12' },
+  { id: 5, name: 'World Cup', date: '2025-06-17' }
+])
 
 // Computed: upcoming events for next month
 const upcomingEvents = computed(() => {
-  const today = new Date();
-  const nextMonth = new Date(today);
-  nextMonth.setMonth(today.getMonth() + 1);
+  const today = new Date()
+  const nextMonth = new Date(today)
+  nextMonth.setMonth(today.getMonth() + 1)
   return eventsList.value.filter(event => {
-    const eventDate = new Date(event.date);
+    const eventDate = new Date(event.date)
     return (
         eventDate.getMonth() === nextMonth.getMonth() &&
         eventDate.getFullYear() === nextMonth.getFullYear()
-    );
-  });
-});
+    )
+  })
+})
 
 // Computed: all events sorted by date
 const allEvents = computed(() => {
-  return [...eventsList.value].sort((a, b) => new Date(a.date) - new Date(b.date));
-});
+  return [...eventsList.value].sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
+  )
+})
 </script>
-
 
 <style scoped>
 .news-events-container {
@@ -103,8 +105,6 @@ const allEvents = computed(() => {
 }
 .page-wrapper {
   background: linear-gradient(to right, #434343, #000000);
-  /*background: linear-gradient(to bottom, #2c3e50, #4ca1af);*/
   min-height: 74vh;
 }
-
 </style>

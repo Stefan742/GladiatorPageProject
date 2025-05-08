@@ -1,7 +1,7 @@
 <template>
   <div class="loading-container" v-if="visible">
     <video autoplay muted loop playsinline class="background-video">
-      <source src="/assets/loadingScreen.mp4" type="video/mp4" />
+      <source src="/assets/LogoLoading.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
