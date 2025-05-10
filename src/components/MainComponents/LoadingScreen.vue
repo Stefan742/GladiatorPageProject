@@ -34,11 +34,13 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80%;
-  height: 80%;
+  width: 80vw;
+  height: 80vh;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  background-color: white;
 }
+
 
 
 </style>

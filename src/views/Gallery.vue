@@ -12,10 +12,10 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-import Navbar from '../components/Navbar.vue';
-import LoadingScreen from '../components/LoadingScreen.vue';
-import Carousel from "@/components/Carousel.vue";
-import Footer from "@/components/Footer.vue";
+import Navbar from '../components/MainComponents/Navbar.vue';
+import LoadingScreen from '../components/MainComponents/LoadingScreen.vue';
+import Carousel from "@/components/GalleryComponents/Carousel.vue";
+import Footer from "@/components/MainComponents/Footer.vue";
 
 const isLoading = ref(true);
 

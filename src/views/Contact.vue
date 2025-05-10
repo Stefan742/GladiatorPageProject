@@ -57,9 +57,9 @@
 
 <script setup>
 import {onMounted, ref} from 'vue';
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
-import LoadingScreen from "@/components/LoadingScreen.vue";
+import Navbar from "@/components/MainComponents/Navbar.vue";
+import Footer from "@/components/MainComponents/Footer.vue";
+import LoadingScreen from "@/components/MainComponents/LoadingScreen.vue";
 
 const isLoading = ref(true);
 

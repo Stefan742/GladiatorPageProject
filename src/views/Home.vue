@@ -13,13 +13,13 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-import Navbar from "@/components/Navbar.vue";
-import HeroSection from "@/components/HeroSection.vue";
-import AboutUs from "@/components/AboutUs.vue";
-import TrainingSchedule from '@/components/TrainingSchedule.vue';
-import GallerySection from '@/components/GallerySection.vue';
-import LoadingScreen from '@/components/LoadingScreen.vue';
-import Footer from "@/components/Footer.vue";
+import Navbar from "@/components/MainComponents/Navbar.vue";
+import HeroSection from "@/components/MainComponents/HeroSection.vue";
+import AboutUs from "@/components/MainComponents/AboutUs.vue";
+import TrainingSchedule from '@/components/TrainingComponents/TrainingSchedule.vue';
+import GallerySection from '@/components/GalleryComponents/GallerySection.vue';
+import LoadingScreen from '@/components/MainComponents/LoadingScreen.vue';
+import Footer from "@/components/MainComponents/Footer.vue";
 
 const isLoading = ref(true);
 

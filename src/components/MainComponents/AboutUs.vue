@@ -1,6 +1,6 @@
 <template>
   <section id="us">
-    <img src="../../public/assets/us.jpg" height="400" width="400" class="fade-in-left"/>
+    <img src="../../../public/assets/us.jpg" height="400" width="400" class="fade-in-left"/>
     <div id="side">
       <h1>DISCOVER OUR JOURNEY</h1>
       <p>Founded in 2007, Gladiator Karate Club began with a clear mission — to build disciplined, dedicated, and strong martial artists who embody the true spirit of warriors.

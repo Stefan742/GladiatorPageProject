@@ -3,7 +3,7 @@
     <h1>Our Gallery</h1>
     <div class="gallery-container">
       <div class="gallery-item fade-in-scale" v-for="i in 6" :key="i">
-        <img :src="`/assets/${i}.jpg`" :alt="`Image ${i}`" />
+        <img :src="`/assets/GalleryPhotos/${i}.jpg`" :alt="`Image ${i}`" />
       </div>
     </div>
     <div class="view-more-container">

@@ -15,11 +15,11 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
-import Navbar from "@/components/Navbar.vue"
-import NewsSection from "@/components/NewsSection.vue"
-import EventsSection from "@/components/EventsSection.vue"
-import Footer from "@/components/Footer.vue"
-import LoadingScreen from "@/components/LoadingScreen.vue"
+import Navbar from "@/components/MainComponents/Navbar.vue"
+import NewsSection from "@/components/News&EventsComponents/NewsSection.vue"
+import EventsSection from "@/components/News&EventsComponents/EventsSection.vue"
+import Footer from "@/components/MainComponents/Footer.vue"
+import LoadingScreen from "@/components/MainComponents/LoadingScreen.vue"
 
 // Loading screen
 const isLoading = ref(true)
@@ -36,7 +36,7 @@ const newsList = ref([
     title: 'New Dojo Opening',
     description: 'We opened a new dojo in Skopje.',
     date: '2025-04-10',
-    src: './../public/assets/2.jpg',
+    src: './../public/assets/GalleryPhotos/2.jpg',
     link: 'https://example.com/news1'
   },
   {
@@ -44,7 +44,7 @@ const newsList = ref([
     title: 'Championship Results',
     description: 'Our team won 3 medals!',
     date: '2025-03-22',
-    src: './../public/assets/1.jpg',
+    src: './../public/assets/GalleryPhotos/1.jpg',
     link: 'https://example.com/news2'
   },
   {
@@ -52,7 +52,7 @@ const newsList = ref([
     title: 'Championship finals',
     description: 'Our team won 3 medals!',
     date: '2025-03-22',
-    src: './../public/assets/3.jpg',
+    src: './../public/assets/GalleryPhotos/3.jpg',
     link: 'https://example.com/news3'
   }
 ])

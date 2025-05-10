@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Gallery from '../views/Gallery.vue'
 import Training from "@/views/Training.vue";
-import Contact from "@/components/Contact.vue";
+import Contact from "@/views/Contact.vue";
 import NewsAndEvents from "@/views/NewsAndEvents.vue"
 
 const routes = [

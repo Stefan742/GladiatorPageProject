@@ -46,18 +46,18 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 //Slikite koi sto gi pi prikazuvame vo galerijata
 const images = [
-  '../../public/assets/1.jpg',
-  '../../public/assets/2.jpg',
-  '../../public/assets/3.jpg',
-  '../../public/assets/4.jpg',
-  '../../public/assets/5.jpg',
-  '../../public/assets/6.jpg',
-  '../../public/assets/7.jpg',
-  '../../public/assets/8.jpg',
-  '../../public/assets/9.jpg',
-  '../../public/assets/10.jpg',
-  '../../public/assets/11.jpg',
-  '../../public/assets/12.jpg',
+  '../../public/assets/GalleryPhotos/1.jpg',
+  '../../public/assets/GalleryPhotos/2.jpg',
+  '../../public/assets/GalleryPhotos/3.jpg',
+  '../../public/assets/GalleryPhotos/4.jpg',
+  '../../public/assets/GalleryPhotos/5.jpg',
+  '../../public/assets/GalleryPhotos/6.jpg',
+  '../../public/assets/GalleryPhotos/7.jpg',
+  '../../public/assets/GalleryPhotos/8.jpg',
+  '../../public/assets/GalleryPhotos/9.jpg',
+  '../../public/assets/GalleryPhotos/10.jpg',
+  '../../public/assets/GalleryPhotos/11.jpg',
+  '../../public/assets/GalleryPhotos/12.jpg',
 ]
 
 const currentIndex = ref(0)

@@ -22,9 +22,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-import Navbar from '../components/Navbar.vue';
-import LoadingScreen from '../components/LoadingScreen.vue';
-import TrainingCard from '../components/TrainingCard.vue';
+import Navbar from '../components/MainComponents/Navbar.vue';
+import LoadingScreen from '../components/MainComponents/LoadingScreen.vue';
+import TrainingCard from '../components/TrainingComponents/TrainingCard.vue';
 
 const isLoading = ref(true);
 
@@ -38,61 +38,61 @@ const trainingSchedule = [
   {
     day: 'Monday',
     belts: [
-      { name: 'White', time: 'No training', image: '/assets/white-belt.png' },
-      { name: 'Yellow', time: 'No training', image: '/assets/yellow-belt.png' },
-      { name: 'Orange', time: 'No training', image: '/assets/orange-belt.png' },
-      { name: 'Red', time: '19:30', image: '/assets/red-belt.png' },
-      { name: 'Purple', time: '19:30', image: '/assets/purple-belt.png' },
-      { name: 'Green', time: '19:30', image: '/assets/green-belt.png' },
-      { name: 'Blue', time: '19:30', image: '/assets/blue-belt.png' },
-      { name: 'Dark Blue', time: '20:30', image: '/assets/darkBlue-belt.png' },
-      { name: 'Brown', time: '20:30', image: '/assets/brown-belt.png' },
-      { name: 'Black', time: '20:30', image: '/assets/black-belt.png' },
+      { name: 'White', time: 'No training', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Yellow', time: 'No training', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Orange', time: 'No training', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Red', time: '19:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Purple', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Green', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Blue', time: '19:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Dark Blue', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Brown', time: '20:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Black', time: '20:30', image: '/assets/BeltsPhotos/black-belt.png' },
     ],
   },
   {
     day: 'Tuesday',
     belts: [
-      { name: 'White', time: '17:30', image: '/assets/white-belt.png' },
-      { name: 'Yellow', time: '17:30', image: '/assets/yellow-belt.png' },
-      { name: 'Orange', time: '18:30', image: '/assets/orange-belt.png' },
-      { name: 'Red', time: '18:30', image: '/assets/red-belt.png' },
-      { name: 'Purple', time: '19:30', image: '/assets/purple-belt.png' },
-      { name: 'Green', time: '19:30', image: '/assets/green-belt.png' },
-      { name: 'Blue', time: '20:30', image: '/assets/blue-belt.png' },
-      { name: 'Dark Blue', time: '20:30', image: '/assets/darkBlue-belt.png' },
-      { name: 'Brown', time: '21:30', image: '/assets/brown-belt.png' },
-      { name: 'Black', time: '21:30', image: '/assets/black-belt.png' },
+      { name: 'White', time: '17:30', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Yellow', time: '17:30', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Orange', time: '18:30', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Red', time: '18:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Purple', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Green', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Blue', time: '20:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Dark Blue', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Brown', time: '21:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Black', time: '21:30', image: '/assets/BeltsPhotos/black-belt.png' },
     ],
   },
   {
     day: 'Wednesday',
     belts: [
-      { name: 'White', time: 'No Training', image: '/assets/white-belt.png' },
-      { name: 'Yellow', time: 'No Training', image: '/assets/yellow-belt.png' },
-      { name: 'Orange', time: 'No Training', image: '/assets/orange-belt.png' },
-      { name: 'Red', time: '19:30', image: '/assets/red-belt.png' },
-      { name: 'Purple', time: '19:30', image: '/assets/purple-belt.png' },
-      { name: 'Green', time: '19:30', image: '/assets/green-belt.png' },
-      { name: 'Blue', time: '19:30', image: '/assets/blue-belt.png' },
-      { name: 'Dark Blue', time: '20:30', image: '/assets/darkBlue-belt.png' },
-      { name: 'Brown', time: '20:30', image: '/assets/brown-belt.png' },
-      { name: 'Black', time: '20:30', image: '/assets/black-belt.png' },
+      { name: 'White', time: 'No Training', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Yellow', time: 'No Training', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Orange', time: 'No Training', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Red', time: '19:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Purple', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Green', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Blue', time: '19:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Dark Blue', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Brown', time: '20:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Black', time: '20:30', image: '/assets/BeltsPhotos/black-belt.png' },
     ],
   },
   {
     day: 'Thursday',
     belts: [
-      { name: 'White', time: '17:30', image: '/assets/white-belt.png' },
-      { name: 'Yellow', time: '17:30', image: '/assets/yellow-belt.png' },
-      { name: 'Orange', time: '18:30', image: '/assets/orange-belt.png' },
-      { name: 'Red', time: '18:30', image: '/assets/red-belt.png' },
-      { name: 'Purple', time: '19:30', image: '/assets/purple-belt.png' },
-      { name: 'Green', time: '19:30', image: '/assets/green-belt.png' },
-      { name: 'Blue', time: '20:30', image: '/assets/blue-belt.png' },
-      { name: 'Dark Blue', time: '20:30', image: '/assets/darkBlue-belt.png' },
-      { name: 'Brown', time: '21:30', image: '/assets/brown-belt.png' },
-      { name: 'Black', time: '21:30', image: '/assets/black-belt.png' },
+      { name: 'White', time: '17:30', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Yellow', time: '17:30', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Orange', time: '18:30', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Red', time: '18:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Purple', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Green', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Blue', time: '20:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Dark Blue', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Brown', time: '21:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Black', time: '21:30', image: '/assets/BeltsPhotos/black-belt.png' },
     ],
   },
 ];
