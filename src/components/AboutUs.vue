@@ -3,27 +3,31 @@
     <img src="../../public/assets/us.jpg" height="400" width="400" class="fade-in-left"/>
     <div id="side">
       <h1>DISCOVER OUR JOURNEY</h1>
-      <p>Karate Team Gladiator has been a beacon of martial arts excellence since 2007...</p>
+      <p>Founded in 2007, Gladiator Karate Club began with a clear mission — to build disciplined, dedicated, and strong martial artists who embody the true spirit of warriors.
+        From humble beginnings to becoming a respected name in the karate community, our journey is a story of perseverance, passion, and progress.
+        Over the years, we have trained generations of athletes who not only win medals but also grow into individuals guided by honor, respect, and self-discipline.
+        With committed coaches, a supportive community, and unstoppable energy, Gladiator has become more than just a club — it’s a family.</p>
     </div>
     <div id="middle">
       <div class="row">
         <div class="column">
           <h1><span>18</span> Years</h1>
-          <p>Since our founding...</p>
+          <p>Since our founding in 2007, we’ve grown with passion and commitment, constantly evolving to meet the needs of our students.</p>
         </div>
         <div class="column">
           <h1>Awards</h1>
-          <p>Our team has proudly earned...</p>
+          <p>Our team has proudly earned over 200 medals at regional, national, and international competitions, proving our relentless dedication.</p>
         </div>
+
       </div>
       <div class="row">
         <div class="column">
           <h1><span>100</span> Members</h1>
-          <p>With a strong focus on community...</p>
+          <p>With a strong focus on community and personal growth, we are proud to have over 100 active members training regularly at our club.</p>
         </div>
         <div class="column">
           <h1><span>5</span> Core Values</h1>
-          <p>Our core values of discipline...</p>
+          <p>Our core values — Discipline, Respect, Integrity, Perseverance, and Teamwork — guide everything we do, in and out of the dojo.</p>
         </div>
       </div>
     </div>
@@ -84,7 +88,9 @@ onMounted(() => {
   width: 60%;
   padding: 20px;
 }
-
+#side p{
+  font-style: italic;
+}
 #middle {
   width: 90%;
   padding: 20px;

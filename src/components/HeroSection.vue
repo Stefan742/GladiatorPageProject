@@ -1,13 +1,13 @@
 <template>
   <div id="hero">
-    <video
-        ref="heroVideo"
-        src="/assets/VideoFinal.mp4"
-        autoplay
-        muted
-        playsinline
-        class="hero-video"
-    ></video>
+<!--    <video-->
+<!--        ref="heroVideo"-->
+<!--        src="/assets/VideoFinal.mp4"-->
+<!--        autoplay-->
+<!--        muted-->
+<!--        playsinline-->
+<!--        class="hero-video"-->
+<!--    ></video>-->
     <h1>KARATE TEAM GLADIATOR</h1>
     <h3>
       Join Karate Team Gladiator and embark on a journey of discipline, passion, and excellence...
@@ -32,8 +32,8 @@ const scrollToAbout = () => {
 </script>
 <style scoped>
 #hero {
-  /*background: url("/public/assets/hero.png") no-repeat;*/
-  /*background-size: cover;*/
+  background: url("/public/assets/hero.png") no-repeat;
+  background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -52,7 +52,7 @@ const scrollToAbout = () => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: left center; /* <-- ова е трикот */
+  object-position: left center;
   z-index: 0;
 }
 
@@ -72,7 +72,6 @@ const scrollToAbout = () => {
   font-weight: normal;
   max-width: 700px;
   margin-top: 15px;
-  color: white;
   z-index: 2;
   position: relative;
 }
@@ -87,7 +86,8 @@ const scrollToAbout = () => {
 }
 
 button {
-  background: #fff;
+  background: black;
+  color: white;
   border: none;
   padding: 10px 20px;
   display: inline-block;
@@ -111,14 +111,15 @@ button::before {
   bottom: 0;
   right: 100%;
   left: 0;
-  background: rgb(20, 20, 20);
+  background: #f1c40f;
+  color: black;
   opacity: 0;
   z-index: -1;
   transition: all 0.5s;
 }
 
 button:hover {
-  color: #fff;
+  color: black;
 }
 
 button:hover::before {
