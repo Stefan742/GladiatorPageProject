@@ -8,16 +8,16 @@
 <!--        playsinline-->
 <!--        class="hero-video"-->
 <!--    ></video>-->
-    <h1>KARATE TEAM GLADIATOR</h1>
+    <h1>{{ $t('hero.name') }}</h1>
     <h3>
-      Join Karate Team Gladiator and embark on a journey of discipline, passion, and excellence...
+      {{ $t('hero.text') }}
     </h3>
     <div class="hero-buttons">
       <button>
-        <span>APPLY NOW</span>
+        <span>{{ $t('hero.apply') }}</span>
       </button>
       <button @click="scrollToAbout">
-        <span>LEARN MORE</span>
+        <span>{{ $t('hero.learn') }}</span>
       </button>
     </div>
   </div>

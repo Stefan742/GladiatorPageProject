@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p>© {{ new Date().getFullYear() }} Gladiator Karate Team. All Rights Reserved.</p>
+    <p>© {{ new Date().getFullYear() }} {{$t('footer.copyright')}}</p>
     <div class="social-icons">
       <a href="https://www.instagram.com/karateteamgladiator" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram"></i>

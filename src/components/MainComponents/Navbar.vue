@@ -15,10 +15,16 @@
     <div class="nav-center" :class="{ open: isMenuOpen }">
       <nav>
         <ul>
-          <li><router-link to="/">About Us</router-link></li>
-          <li><router-link to="/training">Training</router-link></li>
-          <li><router-link to="/news&events">News & Events</router-link></li>
-          <li><router-link to="/contact">Contact</router-link></li>
+          <li><router-link to="/">{{ $t('navbar.home') }}</router-link></li>
+          <li><router-link to="/training">{{ $t('navbar.training') }}</router-link></li>
+          <li><router-link to="/news&events">{{ $t('navbar.News') }}</router-link></li>
+          <li><router-link to="/contact">{{ $t('navbar.contact') }}</router-link></li>
+          <li class="language-switcher">
+            <select v-model="$i18n.locale" aria-label="Select language">
+              <option value="en" id="en">EN</option>
+              <option value="mk" id="mk">MK</option>
+            </select>
+          </li>
         </ul>
       </nav>
     </div>
@@ -78,7 +84,7 @@ nav ul {
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   transition: color 0.3s;
 }
@@ -146,5 +152,25 @@ nav ul li a:hover {
     align-items: center;
   }
 }
+
+.language-switcher select {
+  background-color: transparent;
+  border: 1.5px solid white;
+  color: white;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher select:hover,
+.language-switcher select:focus {
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+
 
 </style>

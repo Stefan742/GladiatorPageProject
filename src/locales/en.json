@@ -1,0 +1,43 @@
+{
+  "navbar": {
+    "home": "Home",
+    "training": "Training",
+    "News": "News & Events",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+  "hero": {
+    "name": "KARATE TEAM GLADIATOR",
+    "text": "Join Karate Team Gladiator and embark on a journey of discipline, passion, and excellence...",
+    "apply": "APPLY NOW",
+    "learn": "LEARN MORE"
+  },
+  "aboutUs":{
+    "title": "DISCOVER OUR JOURNEY",
+    "mainText": "Founded in 2007, Gladiator Karate Club began with a clear mission — to build disciplined, dedicated, and strong martial artists who embody the true spirit of warriors. From humble beginnings to becoming a respected name in the karate community, our journey is a story of perseverance, passion, and progress. Over the years, we have trained generations of athletes who not only win medals but also grow into individuals guided by honor, respect, and self-discipline. With committed coaches, a supportive community, and unstoppable energy, Gladiator has become more than just a club — it’s a family.",
+    "yearsTitle": "Years",
+    "yearsText": "Since our founding in 2007, we’ve grown with passion and commitment, constantly evolving to meet the needs of our students.",
+    "awardsTitle": "Awards",
+    "awardsText": "Our team has proudly earned over 200 medals at regional, national, and international competitions, proving our relentless dedication.",
+    "membersTitle": "Members",
+    "membersText": "With a strong focus on community and personal growth, we are proud to have over 100 active members training regularly at our club.",
+    "valuesTitle": "Core Values",
+    "valuesText": "Our core values — Discipline, Respect, Integrity, Perseverance, and Teamwork — guide everything we do, in and out of the dojo."
+  },
+  "training": {
+    "title": "Training Schedule",
+    "intro": "Whether you're just starting out or aiming for the podium, our sessions are designed to push your limits and unlock your potential.",
+    "mondayWednesday": "Monday & Wednesday: 19:30 PM - 22:30 PM",
+    "tuesdayThursday": "Tuesday & Thursday: 17:30 AM – 22:30 AM",
+    "viewFull": "View Full Schedule"
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "more": "View More"
+  },
+  "footer": {
+    "copyright": "Gladiator Karate Team. All Rights Reserved."
+  }
+}

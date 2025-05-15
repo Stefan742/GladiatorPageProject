@@ -1,6 +1,6 @@
 <template>
   <div id="gallery">
-    <h1>Our Gallery</h1>
+    <h1>{{ $t('gallery.title') }}</h1>
     <div class="gallery-container">
       <div class="gallery-item fade-in-scale" v-for="i in 6" :key="i">
         <img :src="`/assets/GalleryPhotos/${i}.jpg`" :alt="`Image ${i}`" />
@@ -9,7 +9,7 @@
     <div class="view-more-container">
       <div class="gradient-overlay"></div>
       <router-link to="/gallery">
-        <button class="view-more-btn">View More</button>
+        <button class="view-more-btn">{{ $t('gallery.more') }}</button>
       </router-link>
     </div>
   </div>

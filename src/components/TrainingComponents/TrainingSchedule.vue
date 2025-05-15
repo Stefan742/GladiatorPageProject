@@ -1,14 +1,14 @@
 <template>
   <div id="treninzi">
-    <h1>Training Schedule</h1>
+    <h1>{{ $t('training.title') }}</h1>
     <p class="intro">
-      Whether you're just starting out or aiming for the podium, our sessions are designed to push your limits and unlock your potential.
+      {{ $t('training.intro') }}
     </p>
     <ul>
-      <li><strong>Monday & Wednesday:</strong> 19:30 PM - 22:30 PM</li>
-      <li><strong>Tuesday & Thursday:</strong> 17:30 AM – 22:30 AM</li>
+      <li><strong>{{ $t('training.mondayWednesday') }}</strong> 19:30 PM - 22:30 PM</li>
+      <li><strong>{{ $t('training.tuesdayThursday') }}</strong> 17:30 AM – 22:30 AM</li>
     </ul>
-    <router-link to="/training" class="training-btn">View Full Schedule</router-link>
+    <router-link to="/training" class="training-btn">{{ $t('training.viewFull') }}</router-link>
   </div>
 </template>
 <style scoped>

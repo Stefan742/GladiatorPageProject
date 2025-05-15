@@ -2,32 +2,29 @@
   <section id="us">
     <img src="../../../public/assets/us.jpg" height="400" width="400" class="fade-in-left"/>
     <div id="side">
-      <h1>DISCOVER OUR JOURNEY</h1>
-      <p>Founded in 2007, Gladiator Karate Club began with a clear mission — to build disciplined, dedicated, and strong martial artists who embody the true spirit of warriors.
-        From humble beginnings to becoming a respected name in the karate community, our journey is a story of perseverance, passion, and progress.
-        Over the years, we have trained generations of athletes who not only win medals but also grow into individuals guided by honor, respect, and self-discipline.
-        With committed coaches, a supportive community, and unstoppable energy, Gladiator has become more than just a club — it’s a family.</p>
+      <h1>{{ $t('aboutUs.title') }}</h1>
+      <p>{{ $t('aboutUs.mainText') }}</p>
     </div>
     <div id="middle">
       <div class="row">
         <div class="column">
-          <h1><span>18</span> Years</h1>
-          <p>Since our founding in 2007, we’ve grown with passion and commitment, constantly evolving to meet the needs of our students.</p>
+          <h1><span>18</span> {{ $t('aboutUs.yearsTitle') }}</h1>
+          <p>{{ $t('aboutUs.yearsText') }}</p>
         </div>
         <div class="column">
-          <h1>Awards</h1>
-          <p>Our team has proudly earned over 200 medals at regional, national, and international competitions, proving our relentless dedication.</p>
+          <h1>{{ $t('aboutUs.awardsTitle') }}</h1>
+          <p>{{ $t('aboutUs.awardsText') }}</p>
         </div>
 
       </div>
       <div class="row">
         <div class="column">
-          <h1><span>100</span> Members</h1>
-          <p>With a strong focus on community and personal growth, we are proud to have over 100 active members training regularly at our club.</p>
+          <h1><span>100</span> {{ $t('aboutUs.membersTitle') }}</h1>
+          <p>{{ $t('aboutUs.membersText') }}</p>
         </div>
         <div class="column">
-          <h1><span>5</span> Core Values</h1>
-          <p>Our core values — Discipline, Respect, Integrity, Perseverance, and Teamwork — guide everything we do, in and out of the dojo.</p>
+          <h1><span>5</span> {{ $t('aboutUs.valuesTitle') }}</h1>
+          <p>{{ $t('aboutUs.valuesTitle') }}</p>
         </div>
       </div>
     </div>
