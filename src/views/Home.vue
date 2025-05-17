@@ -6,7 +6,6 @@
     <AboutUs />
     <TrainingSchedule />
     <GallerySection />
-    <Footer/>
   </div>
 </template>
 

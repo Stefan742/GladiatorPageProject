@@ -8,7 +8,6 @@
       <EventsSection :events="upcomingEvents" title="Upcoming Events" />
       <EventsSection :events="allEvents" title="All Events" />
     </div>
-    <Footer />
   </div>
 </template>
 
