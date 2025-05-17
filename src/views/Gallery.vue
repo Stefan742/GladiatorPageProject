@@ -5,7 +5,6 @@
       <Navbar/>
       <Carousel/>
     </div>
-    <Footer/>
   </div>
 </template>
 
