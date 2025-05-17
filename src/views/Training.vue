@@ -1,12 +1,12 @@
 <template>
-  <LoadingScreen v-if="isLoading" />
+  <LoadingScreen v-if="isLoading"/>
   <div v-else>
-    <div class="page-wrapper">
-      <Navbar />
-      <h1 class="title">Training Schedule</h1>
+    <div className="page-wrapper">
+      <Navbar/>
+      <h1 className="title">{{ $t('trainingScheduleTitle') }}</h1>
 
-      <div class="schedule-wrapper">
-        <div class="grid">
+      <div className="schedule-wrapper">
+        <div className="grid">
           <TrainingCard
               v-for="(day, index) in trainingSchedule"
               :key="index"
@@ -18,23 +18,23 @@
   </div>
 </template>
 
-
 <script setup>
-import { ref, onMounted } from 'vue';
+import {ref, computed, onMounted} from 'vue';
+import {useI18n} from 'vue-i18n';
 
 import Navbar from '../components/MainComponents/Navbar.vue';
 import LoadingScreen from '../components/MainComponents/LoadingScreen.vue';
 import TrainingCard from '../components/TrainingComponents/TrainingCard.vue';
 
 const isLoading = ref(true);
-
 onMounted(() => {
   setTimeout(() => {
     isLoading.value = false;
   }, 2500);
 });
 
-const trainingSchedule = [
+// Англиски распоред
+const trainingScheduleEN = [
   {
     day: 'Monday',
     belts: [
@@ -96,13 +96,82 @@ const trainingSchedule = [
     ],
   },
 ];
-</script>
 
+// Македонски распоред
+const trainingScheduleMK = [
+  {
+    day: 'Понеделник',
+    belts: [
+      { name: 'Бел', time: 'Нема тренинг', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Жолт', time: 'Нема тренинг', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Портокалов', time: 'Нема тренинг', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Црвен', time: '19:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Виолетов', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Зелен', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Син', time: '19:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Темно син', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Кафеав', time: '20:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Црн', time: '20:30', image: '/assets/BeltsPhotos/black-belt.png' },
+    ],
+  },
+  {
+    day: 'Вторник',
+    belts: [
+      { name: 'Бел', time: '17:30', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Жолт', time: '17:30', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Портокалов', time: '18:30', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Црвен', time: '18:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Виолетов', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Зелен', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Син', time: '20:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Темно син', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Кафеав', time: '21:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Црн', time: '21:30', image: '/assets/BeltsPhotos/black-belt.png' },
+    ],
+  },
+  {
+    day: 'Среда',
+    belts: [
+      { name: 'Бел', time: 'Нема тренинг', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Жолт', time: 'Нема тренинг', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Портокалов', time: 'Нема тренинг', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Црвен', time: '19:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Виолетов', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Зелен', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Син', time: '19:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Темно син', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Кафеав', time: '20:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Црн', time: '20:30', image: '/assets/BeltsPhotos/black-belt.png' },
+    ],
+  },
+  {
+    day: 'Четврток',
+    belts: [
+      { name: 'Бел', time: '17:30', image: '/assets/BeltsPhotos/white-belt.png' },
+      { name: 'Жолт', time: '17:30', image: '/assets/BeltsPhotos/yellow-belt.png' },
+      { name: 'Портокалов', time: '18:30', image: '/assets/BeltsPhotos/orange-belt.png' },
+      { name: 'Црвен', time: '18:30', image: '/assets/BeltsPhotos/red-belt.png' },
+      { name: 'Виолетов', time: '19:30', image: '/assets/BeltsPhotos/purple-belt.png' },
+      { name: 'Зелен', time: '19:30', image: '/assets/BeltsPhotos/green-belt.png' },
+      { name: 'Син', time: '20:30', image: '/assets/BeltsPhotos/blue-belt.png' },
+      { name: 'Темно син', time: '20:30', image: '/assets/BeltsPhotos/darkBlue-belt.png' },
+      { name: 'Кафеав', time: '21:30', image: '/assets/BeltsPhotos/brown-belt.png' },
+      { name: 'Црн', time: '21:30', image: '/assets/BeltsPhotos/black-belt.png' },
+    ],
+  },
+];
+
+
+const {locale} = useI18n();
+
+const trainingSchedule = computed(() => {
+  return locale.value === 'mk' ? trainingScheduleMK : trainingScheduleEN;
+});
+</script>
 
 <style scoped>
 .page-wrapper {
   background: linear-gradient(to right, #434343, #000000);
-  /*background: linear-gradient(to bottom, #2c3e50, #4ca1af);*/
   min-height: 100vh;
   padding-bottom: 40px;
 }
@@ -125,4 +194,3 @@ const trainingSchedule = [
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 </style>
-
