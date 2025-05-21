@@ -41,8 +41,13 @@
     "copyright": "Карате Клуб Гладијатор."
   },
 
-  "trainingScheduleTitle": "Распоред на тренинзи"
+  "trainingScheduleTitle": "Распоред на тренинзи",
 
+  "News&EventsTitle":"Новости и настани",
+  "newsTitle": "Новости",
+  "upcomingEventsTitle": "Претстојни Настани",
+  "allEventsTitle": "Сите Настани",
 
+  "galleryTitle": "Нашата Галерија"
 
 }

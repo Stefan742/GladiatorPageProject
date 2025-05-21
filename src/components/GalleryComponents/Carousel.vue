@@ -1,5 +1,5 @@
 <template>
-  <h1 id="gallery-title">OUR GALLERY</h1>
+  <h1 id="gallery-title">{{$t('galleryTitle')}}</h1>
 
 <!--  Implementacija na caroseulot-->
   <div class="gallery-container">
@@ -43,6 +43,10 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+const { t } = useI18n()
 
 //Slikite koi sto gi pi prikazuvame vo galerijata
 const images = [

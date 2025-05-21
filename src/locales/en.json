@@ -41,6 +41,12 @@
     "copyright": "Gladiator Karate Team. All Rights Reserved."
   },
 
-  "trainingScheduleTitle": "Training Schedule"
+  "trainingScheduleTitle": "Training Schedule",
 
+  "News&EventsTitle":"News & Events",
+  "newsTitle": "News",
+  "upcomingEventsTitle": "Upcoming Events",
+  "allEventsTitle": "All Events",
+
+  "galleryTitle": "Our Gallery"
 }

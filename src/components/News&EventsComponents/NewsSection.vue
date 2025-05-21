@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-header">News</div>
+    <div class="card-header">{{$t('newsTitle')}}</div>
     <div class="news-carousel-wrapper">
       <div class="carousel-container" @mouseenter="stopAutoSlide" @mouseleave="startAutoSlide">
         <transition name="carousel" mode="out-in">
@@ -32,51 +32,56 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['newsList'],
-  data() {
-    return {
-      currentIndex: 0,
-      intervalId: null
-    };
-  },
-  computed: {
-    currentItem() {
-      return this.newsList[this.currentIndex];
-    }
-  },
-  methods: {
-    nextItem() {
-      this.currentIndex = (this.currentIndex + 1) % this.newsList.length;
-    },
-    prevItem() {
-      this.currentIndex =
-          (this.currentIndex - 1 + this.newsList.length) % this.newsList.length;
-    },
-    setCurrentIndex(index) {
-      this.currentIndex = index;
-    },
-    goToLink() {
-      if (this.currentItem.link) {
-        window.open(this.currentItem.link, '_blank');
-      }
-    },
-    startAutoSlide() {
-      this.intervalId = setInterval(this.nextItem, 3000); // Slide every 3s
-    },
-    stopAutoSlide() {
-      clearInterval(this.intervalId);
-    }
-  },
-  mounted() {
-    this.startAutoSlide();
-  },
-  beforeUnmount() {
-    this.stopAutoSlide();
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const props = defineProps({
+  newsList: Array
+})
+
+const { locale } = useI18n()
+
+const currentIndex = ref(0)
+const intervalId = ref(null)
+
+const currentItem = computed(() => props.newsList[currentIndex.value])
+
+function nextItem() {
+  currentIndex.value = (currentIndex.value + 1) % props.newsList.length
+}
+
+function prevItem() {
+  currentIndex.value = (currentIndex.value - 1 + props.newsList.length) % props.newsList.length
+}
+
+function setCurrentIndex(index) {
+  currentIndex.value = index
+}
+
+function goToLink() {
+  if (currentItem.value.link) {
+    window.open(currentItem.value.link, '_blank')
   }
-};
+}
+
+function startAutoSlide() {
+  intervalId.value = setInterval(nextItem, 3000)
+}
+
+function stopAutoSlide() {
+  clearInterval(intervalId.value)
+}
+
+onMounted(() => {
+  startAutoSlide()
+})
+
+onBeforeUnmount(() => {
+  stopAutoSlide()
+})
 </script>
+
 
 <style scoped>
 .card {

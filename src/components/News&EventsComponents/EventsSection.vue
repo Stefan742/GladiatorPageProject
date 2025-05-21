@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-header">{{ title }}</div>
+    <div class="card-header">{{ translatedTitle }}</div>
     <div v-for="event in events" :key="event.id" class="card-item">
       <h3 class="item-title">{{ event.name }}</h3>
       <p class="item-date">{{ formatDate(event.date) }}</p>
@@ -8,21 +8,24 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    events: Array,
-    title: String
-  },
-  methods: {
-    formatDate(dateStr) {
-      const options = { year: 'numeric', month: 'short', day: 'numeric' };
-      return new Date(dateStr).toLocaleDateString(undefined, options);
-    }
-  }
-};
-</script>
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const props = defineProps({
+  events: Array,
+  titleKey: String
+})
+
+const { t } = useI18n()
+
+const translatedTitle = computed(() => t(props.titleKey))
+
+function formatDate(dateStr) {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' }
+  return new Date(dateStr).toLocaleDateString(undefined, options)
+}
+</script>
 <style scoped>
 .card {
   background-color: #ffffff;
