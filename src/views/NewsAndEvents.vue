@@ -1,12 +1,14 @@
 <template>
-  <div class="page-wrapper">
-    <LoadingScreen v-if="isLoading" />
+  <LoadingScreen v-if="isLoading" />
+  <div v-else>
     <Navbar />
-    <h1 id="title">{{$t('News&EventsTitle')}}</h1>
-    <div class="news-events-container">
-      <NewsSection :newsList="newsList" />
-      <EventsSection :events="upcomingEvents" titleKey="upcomingEventsTitle" />
-      <EventsSection :events="allEvents" titleKey="allEventsTitle" />
+    <div class="page-wrapper">
+      <h1 id="title">{{$t('News&EventsTitle')}}</h1>
+      <div class="news-events-container">
+        <NewsSection :newsList="newsList" />
+        <UpcomingEvents :events="upcomingEvents"/>
+        <EventsSection :events="allEvents" titleKey="allEventsTitle" />
+      </div>
     </div>
   </div>
 </template>
@@ -16,7 +18,8 @@ import { ref, computed, onMounted } from 'vue'
 
 import Navbar from "@/components/MainComponents/Navbar.vue"
 import NewsSection from "@/components/News&EventsComponents/NewsSection.vue"
-import EventsSection from "@/components/News&EventsComponents/EventsSection.vue"
+import EventsSection from "@/components/News&EventsComponents/AllEvents.vue"
+import UpcomingEvents from "@/components/News&EventsComponents/UpcomingEvents.vue";
 import LoadingScreen from "@/components/MainComponents/LoadingScreen.vue"
 import { useI18n } from 'vue-i18n'
 
@@ -53,7 +56,7 @@ const newsData = {
   mk: [
     {
       id: 1,
-      title: 'Отворен нов Доџо',
+      title: 'Отворено нов Доџо',
       description: 'Отворивме нов доџо во Скопје.',
       date: '2025-04-10',
       src: './../public/assets/GalleryPhotos/2.jpg',
@@ -73,15 +76,32 @@ const newsData = {
 const eventsData = {
   en: [
     { id: 1, name: 'Spring Training Camp', date: '2025-05-25' },
-    { id: 2, name: 'Local Tournament', date: '2025-06-05' },
-    { id: 3, name: 'Karate Seminar', date: '2025-06-10' },
-    { id: 3, name: 'Ohrid Open', date: '2025-05-24' }
+    { id: 2, name: 'Local Tournament', date: '2025-5-30' },
+    { id: 3, name: 'Karate Seminar', date: '2025-05-29' },
+    { id: 4, name: 'Ohrid Open', date: '2025-05-24' },
+    { id: 5, name: 'Natioanl Championship', date: '2025-05-25' },
+    { id: 6, name: 'Local Tournament', date: '2025-06-05' },
+    { id: 7, name: 'Karate Seminar', date: '2025-06-10' },
+    { id: 8, name: 'Ohrid Open', date: '2025-11-24' },
+    { id: 9, name: 'Spring Training Camp', date: '2025-05-25' },
+    { id: 10, name: 'Local Tournament', date: '2025-06-05' },
+    { id: 11, name: 'Karate Seminar', date: '2025-06-10' },
+    { id: 12, name: 'Sofia Open', date: '2025-05-24' }
   ],
   mk: [
     { id: 1, name: 'Пролетен тренинг камп', date: '2025-05-25' },
     { id: 2, name: 'Локален турнир', date: '2025-06-05' },
     { id: 3, name: 'Карате семинар', date: '2025-06-10' },
-    { id: 3, name: 'Охрид Опен', date: '2025-05-24' }
+    { id: 4, name: 'Охрид Опен', date: '2025-05-24' },
+    { id: 5, name: 'Државно првенство', date: '2025-05-25' },
+    { id: 6, name: 'Локален турнир', date: '2025-06-05' },
+    { id: 7, name: 'Карате семинар', date: '2025-06-10' },
+    { id: 8, name: 'Охрид Опен', date: '2025-05-24' },
+    { id: 9, name: 'Пролетен тренинг камп', date: '2025-05-25' },
+    { id: 10, name: 'Локален турнир', date: '2025-06-05' },
+    { id: 11, name: 'Карате семинар', date: '2025-06-10' },
+    { id: 12, name: 'Охрид Опен', date: '2025-05-24' },
+
   ]
 }
 
@@ -91,15 +111,10 @@ const eventsList = computed(() => eventsData[locale.value])
 // Computed: upcoming events for next month
 const upcomingEvents = computed(() => {
   const today = new Date()
-  const nextMonth = new Date(today)
-  nextMonth.setMonth(today.getMonth() + 1)
-  return eventsList.value.filter(event => {
-    const eventDate = new Date(event.date)
-    return (
-        eventDate.getMonth() === nextMonth.getMonth() &&
-        eventDate.getFullYear() === nextMonth.getFullYear()
-    )
-  })
+  return eventsList.value
+      .filter(event => new Date(event.date) >= today) // само идни настани
+      .sort((a, b) => new Date(a.date) - new Date(b.date)) // сортирај по датум
+      .slice(0, 5) // земи првите 5
 })
 
 // Computed: all events sorted by date
@@ -108,6 +123,7 @@ const allEvents = computed(() => {
       (a, b) => new Date(a.date) - new Date(b.date)
   )
 })
+
 </script>
 
 <style scoped>
@@ -120,7 +136,7 @@ const allEvents = computed(() => {
 }
 #title {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 40px;
   padding-top: 40px;
   margin-bottom: 10px;
   color: white;
@@ -128,5 +144,6 @@ const allEvents = computed(() => {
 .page-wrapper {
   background: linear-gradient(to right, #434343, #000000);
   min-height: 74vh;
+  padding-top: 40px;
 }
 </style>
