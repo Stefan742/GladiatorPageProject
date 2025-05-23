@@ -1,6 +1,5 @@
 <template>
   <div class="card">
-    <div class="card-header">{{$t('newsTitle')}}</div>
     <div class="news-carousel-wrapper">
       <div class="carousel-container" @mouseenter="stopAutoSlide" @mouseleave="startAutoSlide">
         <transition name="carousel" mode="out-in">
@@ -51,10 +50,6 @@ function nextItem() {
   currentIndex.value = (currentIndex.value + 1) % props.newsList.length
 }
 
-function prevItem() {
-  currentIndex.value = (currentIndex.value - 1 + props.newsList.length) % props.newsList.length
-}
-
 function setCurrentIndex(index) {
   currentIndex.value = index
 }
@@ -82,31 +77,20 @@ onBeforeUnmount(() => {
 })
 </script>
 
-
 <style scoped>
 .card {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 650px;
+  max-height: 430px;
   margin: 0 auto;
-  padding: 15px;
   box-sizing: border-box;
-}
-
-.card-header {
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 12px;
-  text-align: center;
-  border-radius: 8px;
-  margin-bottom: 20px;
 }
 
 .news-carousel-wrapper {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
 }
@@ -116,12 +100,11 @@ onBeforeUnmount(() => {
   background-color: black;
   width: 100%;
   max-width: 660px;
-  height: 360px;
+  max-height: 430px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-
 
 .carousel-slide {
   position: relative;
