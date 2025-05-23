@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import router from './router/index.js'  // или од каде ти е router-от
+import router from './router/index.js'
 import { createI18n } from 'vue-i18n'
 
 import en from './locales/en.json'
@@ -10,7 +10,7 @@ import './assets/main.css'
 
 
 const i18n = createI18n({
-    legacy: false,        // **мора да го ставиш ова за Composition API mode**
+    legacy: false,
     locale: 'en',
     fallbackLocale: 'mk',
     messages: { en, mk }
