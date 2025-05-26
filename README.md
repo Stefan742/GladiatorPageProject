@@ -1,26 +1,39 @@
-# gladiator_web_page_project
+# GladiatorPageProject 🥋
 
-This template should help get you started developing with Vue 3 in Vite.
+Ова е веб-апликација изградена со **Vue.js** и **Firebase**, наменета за презентација и администрација на карате клубот **Gladiator**.
 
-## Recommended IDE Setup
+## 🔥 Карактеристики
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- ✅ Јавна почетна страна со информации и слики од клубот
+- ✅ Тренинг панел за:
+  - Преглед на распоред на тренинзи
+- ✅ Информативна страна за:
+  - Прикажување престојни и минати евенти и информации
+- ✅ Контакт страна за:
+  - Прикажување на контакт информации од клубот и локацијата
+- ✅ Модуларна архитектура со Vue компоненти
+- ✅ Респонзивен дизајн со Bootstrap 5
 
-## Customize configuration
+## 📦 Технологии
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [Vue.js](https://vuejs.org/) (v3)
+- [vue-i18n](https://vue-i18n.intlify.dev/) – интернационализација (мултијазичност)
+- [Bootstrap 5](https://getbootstrap.com/)
+- [Vite](https://vitejs.dev/) – build tool
 
-## Project Setup
+## 🚀 Инсталација
 
-```sh
+```bash
+# Клонирај го репото
+git clone https://github.com/Stefan742/GladiatorPageProject.git
+cd GladiatorPageProject
+
+# Инсталирај ги зависностите
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Покрени дев сервер
 npm run dev
-```
+
 
 ### Compile and Minify for Production
 
