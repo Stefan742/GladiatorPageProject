@@ -4,7 +4,7 @@
 
 ### 🎥 Демонстрација на проектот
 
-[![Watch the video](https://img.youtube.com/vi/XLKnBZ3bWdQ/0.jpg)](https://www.youtube.com/watch?v=XLKnBZ3bWdQ)
+[![Watch the video](https://www.youtube.com/watch?v=XLKnBZ3bWdQ)]
 
 
 ## 🔥 Карактеристики
